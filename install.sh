@@ -62,7 +62,7 @@ After=network.target # Launchs after
 Type=simple
 User=$USER
 WorkingDirectory=$path/showEpicBot
-ExecStart=/usr/bin/python3 $path/showEpicBot/retrieveEpicGames.py
+ExecStart=/usr/bin/python3 -u $path/showEpicBot/retrieveEpicGames.py
 Restart=on-failure		#Restart if service Crashes
 RestartSec=5			    #Take 5s to restart
 
@@ -74,4 +74,5 @@ sudo systemctl enable $name.service
 sudo systemctl start $name.service
 
 clear
+
 sudo systemctl status $name.service
